@@ -13,9 +13,11 @@ public class StringStudy {
         String d = "hello";
         String c = b + 2;
         String e = d + 2;
-        System.out.println((b == d));
+        String f = e.intern();
+//        System.out.println((b == d));
         System.out.println((a == c));
         System.out.println((a == e));
-        System.out.println((d == e));
+        System.out.println((a == f));
+//        System.out.println((d == e));
     }
 }
