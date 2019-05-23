@@ -19,5 +19,11 @@ public class StringStudy {
         System.out.println((a == e));
         System.out.println((a == f));
 //        System.out.println((d == e));
+
+        String number = "129935353453";
+        StringBuilder sb = new StringBuilder(number);
+        sb.insert(sb.length() - 3, ".");
+        System.out.println(sb.toString());
+
     }
 }

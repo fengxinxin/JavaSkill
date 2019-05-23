@@ -56,5 +56,34 @@ public class DateToLocal {
         Date date1 = Date.from(zdt2.toInstant());
         System.out.println(date1);
 
+        //获取某个时区的时间
+        ZoneId zoneCurrent = ZoneId.systemDefault();
+        System.out.println("Zone : " + zoneCurrent);
+
+        LocalDateTime ldt = LocalDateTime.now(zoneCurrent);
+        Date ldtDate1 = Date.from(ldt.atZone(ZoneId.of("Asia/Shanghai")).toInstant());
+
+        LocalDateTime ldt2 = LocalDateTime.now(ZoneId.of("Asia/Tokyo"));
+        Date ldtDate2 = Date.from(ldt2.atZone(ZoneId.of("Asia/Tokyo")).toInstant());
+
+        LocalDateTime ldt3 = LocalDateTime.now(ZoneId.of("America/Los_Angeles"));
+        Date ldtDate3 = Date.from(ldt3.atZone(zoneId).toInstant());
+
+        LocalDateTime ldt4 = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
+        ZonedDateTime zdt4 = ldt4.atZone(ZoneId.of("Asia/Shanghai"));
+        Date ldtDate4 = Date.from(zdt4.toInstant());
+
+        System.out.println("ldt : " + ldt + " Date : " + ldtDate1);
+        System.out.println("ldt2 : " + ldt2 + " Date : "+ ldtDate2);
+        System.out.println("ldt3 : " + ldt3 + " Date : "+ ldtDate3);
+        System.out.println("ldt4 : " + ldt4 + " Date : "+ ldtDate4);
+
+        //
+        LocalDateTime ldt5 = LocalDateTime.of(ldt3.getYear(), ldt3.getMonth(),ldt3.getDayOfMonth(),
+                ldt3.getHour(),ldt3.getMinute(),ldt3.getSecond());
+        System.out.println(ldt5);
+        ZonedDateTime zdt5 = ldt5.atZone(zoneId);
+        Date date5 = Date.from(zdt5.toInstant());
+        System.out.println(date5);
     }
 }
