@@ -12,6 +12,8 @@ public class Test {
         System.out.println(test1());
         System.out.println(test2());
         System.out.println(test3());
+        System.out.println(test4());
+        System.out.println(test5());
     }
 
     public static String test() {
@@ -69,17 +71,33 @@ public class Test {
         }
     }
 
-    public static String test4() throws Exception {
+    public static String test4() {
         String str = "";
         try {
-            str = "try";
+            str = "test4 -- try";
             Integer.parseInt(null);
+            return str;
         } catch (Exception e) {
-            str = "catch";
+            str = "test4 -- catch";
             return str;
         } finally {
             str = "finally";
-            throw new Exception();
+            System.out.println("test4 -- finally");
+        }
+    }
+
+    public static String test5() {
+        String str = "";
+        try {
+//            str = "test5 -- try";
+            System.out.println("test5 -- try -- sout");
+            return str;
+        } catch (Exception e) {
+            str = "test5 -- catch";
+            return str;
+        } finally {
+            str = "finally";
+            System.out.println("test5 -- finally");
         }
     }
 }
