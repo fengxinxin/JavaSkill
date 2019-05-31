@@ -9,7 +9,7 @@ package com.iolo.javaskill.tryCatch;
 public class Test {
     public static void main(String[] args) {
         System.out.println(test());
-        System.out.println(test1());
+        System.out.println("test1 : " + test1());
         System.out.println(test2());
         System.out.println(test3());
         System.out.println(test4());
@@ -81,16 +81,17 @@ public class Test {
             str = "test4 -- catch";
             return str;
         } finally {
-            str = "finally";
-            System.out.println("test4 -- finally");
+            str = "test4 -- finally";
+//            System.out.println("test4 -- finally");
+            return str;
         }
     }
 
     public static String test5() {
         String str = "";
         try {
-//            str = "test5 -- try";
-            System.out.println("test5 -- try -- sout");
+            str = "test5 -- try";
+//            System.out.println("test5 -- try -- sout");
             return str;
         } catch (Exception e) {
             str = "test5 -- catch";
